@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd"> 
+<struts>
+	<include file="score.xml" />
+	
+	<constant name="struts.multipart.maxSize" value="20971520" ></constant>
+	
+	<!-- 退出系统 -->
+	<package name="logOutSystem" extends="struts-default" namespace="/">
+		<action name="logOut" class="action.test" method="SessionClear">
+			<result name="success">Login.html</result>
+			<result name="error">BG.html</result>
+		</action>
+	</package>
+	
+	<package name="extjs4" extends="json-default" namespace="/">        
+		
+		<!-- Word部分 -->
+		<action name="updateNode" class="xml.Action" method="updateNode">
+			<result type="json"></result>
+		</action>
+		<action name="deleteNode" class="xml.Action" method="deleteNode">
+			<result type="json"></result>
+		</action>
+		<action name="singleCheck" class="xml.Action" method="singleCheck">
+			<result type="json"></result>
+		</action>
+		<action name="multiCheck" class="xml.Action" method="multiCheck">
+			<result type="json"></result>
+		</action>
+		<action name="addItem" class="xml.Action" method="addItem">
+			<result type="json"></result>
+		</action>
+		<action name="getXmlCheck" class="xml.Action" method="showCheck">
+			<result type="json"></result>
+		</action>
+		<action name="setPREFIX" class="xml.Action" method="setPREFIX">
+			<result type="json"></result>
+		</action>
+		<action name="getXmlTree" class="xml.Action" method="showTrees">
+			<result type="json"></result>
+		</action>
+		<action name="getXmlValues" class="xml.Action" method="showValues">
+			<result type="json"></result>
+		</action>
+		<action name="saveXmlAll" class="xml.Action" method="updateValues">
+			<result type="json"></result>
+		</action>
+		<action name="getXmlResult" class="xml.Action" method="showResult">
+			<result type="json"></result>
+		</action>
+				
+		<!--上传部分-->
+		<!--action name="editPaper" class="updown.FileAction" method="editPaper">
+			<result type="json">
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="delPaper" class="updown.FileAction" method="delPaper">
+			<result type="json"></result>
+		</action>
+		<action name="addPaper" class="updown.FileAction" method="addPaper">
+			<result type="json">
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="upload" class="updown.FileAction" method="teaUpload">
+			<result type="json">
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="stuUpload" class="updown.FileAction" method="stuUpload">
+			<result type="json">
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="getPapers" class="paper.Action" method="showPapers">
+			<result type="json"></result>
+		</action>
+		<action name="getQuestions" class="answer.VAction" method="showViews">
+			<result type="json"></result>
+		</action>
+		<action name="getAnswers" class="answer.VAction" method="showAnswers">
+			<result type="json"></result>
+		</action-->
+		
+		<!--注册登录部分-->
+		<action name="Login" class="action.test" method="execute">
+			<result type="json"></result>			  
+		</action>
+	  	<action name="registered" class="action.test" method="Registered">
+			<result type="json"></result>
+		</action>
+		<action name="List" class="action.ShowStudent" method="ShowList">
+			<result type="json"></result>
+		</action>
+		<action name="Delete" class="action.test" method="Delete">
+			<result type="json"></result>
+		</action>
+		<action name="upddate" class="action.test" method="update">
+			<result type="json"></result>
+		</action>
+		<action name="SessionClear" class="action.test" method="SessionClear">
+			<result type="json"></result>
+		</action>
+
+	<!--题库管理部分-->
+ 		<action name="getQuestion" class="question_manager.Action" method="get">
+                   <result type="json"></result>
+         </action>
+         <action name ="addquestion" class="question_manager.Action" method="add">
+                   <result type="json"><param name="contentType">text/html;charset=utf-8</param></result>
+         </action>
+         
+         <action name ="delquestion" class="question_manager.Action" method="del">
+                   <result type="json"><param name="contentType"></param></result>
+         </action>
+         
+         <action name="change_question" class="question_manager.Action" method="change_question">
+                   <result type="json"><param name="contentType">text/html;charset=utf-8</param></result>
+         </action>
+         <action name="change_question_file" class="question_manager.Action" method="change_file">
+                   <result type="json"><param name="contentType">text/html;charset=utf-8</param></result>
+         </action>
+         
+         <!--试卷管理部分-->
+         <action name ="get_paper" class ="paper_manager.Action" method="get">
+         		<result type="json"></result>
+         </action>
+          <action name ="delpaper" class ="paper_manager.Action" method="del">
+         		<result type="json"></result>
+         </action>
+         
+         <action name = "add_paper" class ="paper_manager.Action" method="add">
+         		<result type="json"></result>
+         </action>
+		
+		<action name = "add_Paper_and_question" class ="paper_manager.PaperQuestion_Action" method="add">
+         		<result type="json"></result>
+         </action>
+         
+         
+         <action name = "change_teacher_paper" class = "paper_manager.PaperQuestion_Action" method="change">
+         		<result type="json"></result>
+         </action>
+         
+         <action name = "get_Paper_question"  class ="paper_manager.PaperQuestion_Action" method="show">
+         		<result type="json"></result>
+         </action>
+         
+         <!-- 学生试卷-->
+         <action name = "get_student_paper"  class ="student_paper.Action" method="get">
+         		<result type="json"><param name="contentType">text/html;charset=utf-8</param></result>
+         </action>
+         
+          <action name = "finish"  class ="student_answer.Action" method="f">
+         		 <result type="json"></result>
+          </action>
+         
+            <action name = "add_student_question"  class ="student_answer.Action" method="add">
+         		<result type="json"><param name="contentType">text/html;charset=utf-8</param></result>
+         </action>
+         
+         <action name = "get_Paper_student"  class ="student_answer.Action" method="get">
+         		<result type="json"></result>
+         </action>
+         
+         <!--考试授权-->
+          <action name = "studentgridAction"  class ="teacher_qualification.Action" method="getstudent">
+         		<result name="students" type="json"></result>
+         </action>
+         
+         <action name = "qualificationMan"  class ="teacher_qualification.Action" method="qualifucation">
+         		<result  type="json"></result>
+         </action>
+         
+         <action name = "setTestid"  class ="teacher_qualification.Action" method="setTest">
+         		<result type="json"></result>
+         </action>
+         
+         <action name = "Cancelqualification"  class ="teacher_qualification.Action" method="Cancel">
+         		<result type="json"></result>
+         </action>
+	</package>
+</struts>

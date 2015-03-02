@@ -1,0 +1,33 @@
+{
+	results:
+	[
+		{
+			ID:"第1小题",score:"20.0",stuScore:"20.0",checkType:"小题",expanded:'true',
+			results:[
+				{ID:"11",prefix:"prefix1",attr:"attr1",value:"value",checkType:"部分匹配",leaf:"true",score:"10",stuValue:"value",status:"true",stuScore:"10"},
+				{ID:"12",prefix:"prefix1",attr:"attr1",value:"value",checkType:"部分匹配",leaf:"true",score:"10",stuValue:"value",status:"true",stuScore:"10"},
+				{
+					ID:"13",prefix:"prefix1",checkType:"全部匹配",score:"10",status:"false",stuScore:"0",
+					results:[
+						{ID:"111",prefix:"prefix1",attr:"attr1",value:"value",leaf:"true",stuValue:"value",status:"true"},
+						{ID:"112",prefix:"prefix1",attr:"attr1",value:"value",leaf:"true",stuValue:"value",status:"false"}
+					]
+				}
+			]
+		},
+		{
+			ID:"第2小题",score:"20.0",stuScore:"20.0",checkType:"小题",
+			results:[
+				{ID:"111",prefix:"prefix1",attr:"attr1",value:"value",checkType:"部分匹配",leaf:"true",score:"10",stuValue:"value",status:"true",stuScore:"10"},
+				{ID:"112",prefix:"prefix1",attr:"attr1",value:"value",checkType:"部分匹配",leaf:"true",score:"10",stuValue:"value",status:"true",stuScore:"10"},
+				{
+					ID:"113",prefix:"prefix1",checkType:"全部匹配",score:"10",status:"true",stuScore:"10",
+					results:[
+						{ID:"1111",prefix:"prefix1",attr:"attr1",value:"value",leaf:"true",stuValue:"value",status:"true"},
+						{ID:"1112",prefix:"prefix1",attr:"attr1",value:"value",leaf:"true",stuValue:"value",status:"true"}
+					]
+				}
+			]
+		}
+	]
+}
