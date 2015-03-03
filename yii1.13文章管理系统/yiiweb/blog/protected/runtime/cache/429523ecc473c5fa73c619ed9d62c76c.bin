@@ -1,0 +1,66 @@
+a:2:{i:0;a:2:{i:0;s:2169:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>后盾网文章管理系统</title>
+
+<link href="/yiiweb/blog/assets/index/css/common.css" rel="stylesheet" />
+</head>	
+<body>
+	<div id="top">
+	</div>
+	<div id="header">
+		<div class='logo'>
+			<a href=""><img src="/yiiweb/blog/assets/index/images/logo.jpg" alt=""></a>
+		</div>
+		<div class='navigation'>
+			<a href="/yiiweb/blog/index.php">首页</a>
+						 				<a href="/yiiweb/blog/index.php?r=category/index&cid=15">情感</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=16">生活</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=17">趣事</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=18">奇闻</a>
+					</div>
+	</div>
+
+	
+	<link href="/yiiweb/blog/assets/index/css/details.css" rel="stylesheet" />
+	<div id="main">
+		<div class='details'>
+			<h1>555</h1>
+			<div class='info'>
+				<div class='base'>
+					<em>发表于 16:39:48</em>, 分类：<strong>奇闻</strong>
+				</div>
+			</div>
+			<div class='content'>
+				<p>haowenzhan ghfjfjjkkg</p><p>uuuuuu<br/></p>			</div>
+		</div>
+
+			
+	<div class='sidebar'>
+			<div class='item'>
+				<h2>文章标题</h2>
+				<ul class='flink'>
+																		<li><a href="/yiiweb/blog/index.php?r=article/index&aid=42">uuuu</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=41">555</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=28">蹲下来抱抱自己</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=40">后盾网激情澎湃的篮球赛</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=38">惜别，亲爱的友情</a></li>
+															</ul>
+			</div>
+			
+		</div>
+	</div>
+	<div id="footer">
+		<div class='bgbar'></div>
+		<div class='bottom'>
+			<div class='pos'>
+				<div class='copyright'>
+					© Power by dream
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
+";i:1;N;}i:1;N;}

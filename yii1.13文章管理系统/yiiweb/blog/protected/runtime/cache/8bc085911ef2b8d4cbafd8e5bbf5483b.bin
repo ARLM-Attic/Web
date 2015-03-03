@@ -1,0 +1,75 @@
+a:2:{i:0;a:2:{i:0;s:4297:"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>文章管理系统</title>
+
+<link href="/yiiweb/blog/assets/index/css/common.css" rel="stylesheet" />
+</head>	
+<body>
+	<div id="top">
+	</div>
+	<div id="header">
+		<div class='logo'>
+			<a href=""><img src="/yiiweb/blog/assets/index/images/logo.jpg" alt=""></a>
+		</div>
+		<div class='navigation'>
+			<a href="/yiiweb/blog/index.php">首页</a>
+						 				<a href="/yiiweb/blog/index.php?r=category/index&cid=15">情感</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=16">生活</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=17">哲理</a>
+							<a href="/yiiweb/blog/index.php?r=category/index&cid=18">感动</a>
+					</div>
+	</div>
+
+	
+	<link href="/yiiweb/blog/assets/index/css/details.css" rel="stylesheet" />
+	<div id="main">
+		<div class='details'>
+			<h1>勇气</h1>
+			<div class='info'>
+				<div class='base'>
+					<em>发表于 16:59:06</em>, 分类：<strong>感动</strong>
+				</div>
+			</div>
+			<div class='content'>
+				<p>“你认为我很<a href="http://www.wenzhangba.com/huati/yongqi/" class="innerlink" target="_blank">有勇气</a>？她问道。</p><p>
+	　　“没错，你很有<a href="http://www.wenzhangba.com/huati/yongqi/" class="innerlink" target="_blank">勇气</a>。”</p><p>
+	　　“如果我有几分勇气，那也是因为经过几位良师的启蒙，我可以举一位给你听听。</p><p>
+	　　多年前，我曾在史丹福医院担任义工，那时认识了一个叫丽莎的<a href="http://www.wenzhangba.com/huati/nvhai/" class="innerlink" target="_blank">小女孩</a>。她身患重疾，病情十分罕见，唯一能挽回她性命的机会，便是接受五岁幼弟的输血，因为她<a href="http://www.wenzhangba.com/huati/didi/" class="innerlink" target="_blank">弟弟</a>也曾罹患此病，后来奇迹般地被救活，现在体内产生出了能对抗病毒的抗体。医生向这个小<a href="http://www.wenzhangba.com/huati/nansheng/" class="innerlink" target="_blank">男生</a>解释了情况，问他是否愿意输血给<a href="http://www.wenzhangba.com/huati/jiejie/" class="innerlink" target="_blank">姐姐</a>。我见他只迟疑了半秒钟，便深深地吸口气说：‘如果能救活丽莎，我愿意。’”(<a href="http://www.wenzhangba.com/gandongwenzhang/" class="innerlink" target="_blank">感动的句子</a> <a href="http://www.wenzhangba.com/" class="innerlink" target="_blank">www.wenzhangba.com</a>)</p><p>
+	　　“进行输血时，他静静躺在姐姐身旁，见到姐姐双颊恢复红润，他不禁面露<a href="http://www.wenzhangba.com/huati/weixiao/" class="innerlink" target="_blank">微笑</a>。</p><p>
+	　　但接着他收起了<a href="http://www.wenzhangba.com/huati/xiaorong/" class="innerlink" target="_blank">笑容</a>，脸色苍白地望着医生，用颤抖的声音问道：‘我会马上死掉吗？’”</p><p>
+	　　“原来他年纪太小，误解了医生的意思，以为要将全身的血都输给姐姐。”</p><p>
+	　　“是的，我学到了什么叫勇气，她补充道：“因为我见到了一个榜样。”</p><p><br/></p>			</div>
+		</div>
+
+			
+	<div class='sidebar'>
+			<div class='item'>
+				<h2>文章标题</h2>
+				<ul class='flink'>
+																		<li><a href="/yiiweb/blog/index.php?r=article/index&aid=49">写在便条上的爱</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=48">勇气</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=47">只有你自己，才能决定别人看你的眼光</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=46">生命，你懂得珍惜吗</a></li>
+													<li><a href="/yiiweb/blog/index.php?r=article/index&aid=45">生气</a></li>
+															</ul>
+			</div>
+			
+		</div>
+	</div>
+	<div id="footer">
+		<div class='bgbar'></div>
+		<div class='bottom'>
+			<div class='pos'>
+				<div class='copyright'>
+					© Power by Dream
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
+";i:1;N;}i:1;N;}
