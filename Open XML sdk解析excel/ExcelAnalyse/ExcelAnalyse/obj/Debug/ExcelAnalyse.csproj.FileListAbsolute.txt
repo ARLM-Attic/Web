@@ -1,0 +1,14 @@
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\ExcelAnalyse.exe.config
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\ExcelAnalyse.exe
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\ExcelAnalyse.pdb
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\Oracle.DataAccess.dll
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.exe
+E:\Visual Studio 2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.pdb
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.exe
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.pdb
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\ExcelAnalyse.exe
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\ExcelAnalyse.pdb
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\Oracle.DataAccess.dll
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\obj\Debug\ExcelAnalyse.csprojResolveAssemblyReference.cache
+E:\VS2012\Projects\ExcelAnalyse\ExcelAnalyse\bin\Debug\log4net.dll

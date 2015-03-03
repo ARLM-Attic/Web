@@ -1,0 +1,6 @@
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\bin\Debug\ExcelXmlDll.dll
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\bin\Debug\ExcelXmlDll.pdb
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\bin\Debug\ExcelXmlDll.tlb
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\obj\Debug\ExcelXmlDll.dll
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\obj\Debug\ExcelXmlDll.pdb
+E:\VS2012\Projects\ExcelXmlDll\ExcelXmlDll\obj\Debug\ExcelXmlDll.csprojResolveAssemblyReference.cache
