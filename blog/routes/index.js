@@ -10,17 +10,36 @@
 
 var crypto = require("crypto");//密码加密MD5
 var User=require('../models/user.js');
+var Post=require('../models/post.js');
 
 module.exports = function(app) {
 
   app.get('/',function(req,res){
-    console.log("session: +++++++++++++++++ :"+req.session.user);
+
+      var postList=[];
+      Post.get(null,function(err,posts){
+          console.log("session: +++++++++++++++++ :"+posts.length);
+          postList=posts;
+          if (err) {
+              posts = [];
+          }
+          res.render('index', {
+              title: '主页'+postList.length,//传递参数给前台
+              user:req.session.user,
+              sucMsg: req.flash('sucMsg').toString(),
+              errMsg: req.flash('errMsg').toString(),
+              posts: postList
+          });
+      })
+      //放到这里，nodejs会先执行res,此时还没查完数据
+   /*   console.log("session122: +++++++++++++++++ :"+postList.length);
     res.render('index', {
-      title: '主页',//传递参数给前台
+        title: '主页'+postList.length,//传递参数给前台
         user:req.session.user,
-      sucMsg: req.flash('sucMsg').toString(),
-      errMsg: req.flash('errMsg').toString()
-    });
+        sucMsg: req.flash('sucMsg').toString(),
+        errMsg: req.flash('errMsg').toString(),
+        posts: postList
+    });*/
   });
 
   app.get('/reg',function(req,res){
@@ -141,6 +160,22 @@ module.exports = function(app) {
           sucMsg: req.flash('sucMsg').toString(),
           errMsg: req.flash('errMsg').toString()
       });
+  });
+    //文章发布
+  app.post('/post',function(req,res){
+      var title=req.body.title;//获取post参数
+      var post=req.body.post;
+      var user=req.session.user;//获得当前用户
+      var postDb=new Post(user.name,title,post);
+      //存储文章
+      postDb.save(function(err){
+          if(err){
+              req.flash('errMsg',err);
+              return  res.redirect('/');
+          }
+          req.flash('sucMsg','发表成功');
+          return  res.redirect('/');
+      })
   });
   app.get('/test',function(req,res){
 

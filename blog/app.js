@@ -44,12 +44,14 @@ app.use(express.static(path.join(__dirname, 'public')));//将public设为资源�
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+//每次请求都会经过登入拦截
 //登录拦截器----放在资源目录下面，不然加载不了样式
-app.use(function (req, res, next) {
+app.use(function (req, res, next) {   //注意死循环，每次请求都会经过拦截
   var url = req.originalUrl;//获取URL
-  if (url != "/login" && !req.session.user) {
-    return res.redirect("/login");
+  if (url != "/login" &&url!="/reg"&& !req.session.user) {
+
+      return res.redirect("/login");
+    //console.log("oveer----------------------");
   }
   next();//否则控制权转移
 });
