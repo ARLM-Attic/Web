@@ -18,7 +18,6 @@ module.exports = function(app) {
 
       var postList=[];
       Post.get(null,function(err,posts){
-          console.log("session: +++++++++++++++++ :"+posts.length);
           postList=posts;
           if (err) {
               posts = [];

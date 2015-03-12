@@ -3,6 +3,7 @@
  *文章发布数据操作类
  */
 var mongodb = require('./db');
+var markdown=require('markdown').markdown;//调用markdowm
 
 function Post(name,title, post) {
     this.name = name;
@@ -82,8 +83,14 @@ Post.get = function(name, callback) {
                 if(err){
                     return callback(err);//查询失败
                 }
+                //解析markdowm为html--post文章正文
+                docs.forEach(function(doc){
+                    doc.post=markdown.toHTML(doc.post);
+                    console.log(doc.post);
+                })
+
                 callback(null,docs);//成功，返回数组
-                console.log("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"+docs.length);
+
             });
 
         });
