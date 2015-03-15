@@ -16,7 +16,7 @@ module.exports=Post;//导出Post数据操作实例
 //存储一篇文章及其相关信息
 Post.prototype.save = function(callback) {
     var date = new Date();
-    //存储各种时间格式，方便以后扩展
+    //存储各种类型的时间格式
     var time = {
         date: date,
         year : date.getFullYear(),
@@ -58,7 +58,7 @@ Post.prototype.save = function(callback) {
 };
 
 
-//读取文章及相关信息----静态方法
+//读取文章及相关信息----静态方法，不用实例化可直接调用
 Post.get = function(name, callback) {
     //打开数据库
     mongodb.open(function (err, db) {
