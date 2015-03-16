@@ -4,7 +4,7 @@
  */
 
 //加载
-var express = require('express');//加1载express模块
+var express = require('express');//加载express模块
 var routes = require('./routes');//和var routes = require('./routes/index')一样;默认找index，加载routes下的index文件
 //var user = require('./routes/user');
 var http = require('http');//加载http模块
