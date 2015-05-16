@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+   
+    <!-- 把扩展名配置为action -->
+    <constant name="struts.action.extension" value="action" />
+        
+     <!--配置主题为simple,不用帮我们优化界面-->
+    <constant name="struts.ui.theme" value="simple" />
+   
+    <package name="default" namespace="/" extends="struts-default">
+    	<!--struts没与spring整合时class为类的名称-->
+    	<!--struts与spring整合后class可以写为bean的名称,当然类名也可以-->
+    	<action name="login" class="userAction" method="login"><!--class值为Action类名第一个字母小写-->
+    	    <!--登入成功重定向到index的action,显示主页，默认是转发,Url地址不变-->
+    		<result name="success" type="redirectAction">index</result>
+    		<result name="error">/login.jsp</result>
+    	</action>
+    	<!--登入成功后主页显示-->
+    	<action name="index" class="userAction" method="showIndex">
+    		<result name="showIndex">/index.html</result>
+    	</action>
+    	
+    	<!--    岗位管理                   -->
+    	<!-- {1}表示第一个*号，使用通配符 -->
+    	<action name="role_*" class="roleAction" method="{1}">
+    		<result name="showList">/WEB-INF/View/Role/list.jsp</result>
+    		<result name="addPage">/WEB-INF/View/Role/add.jsp</result>
+    		<result name="add" type="redirectAction">role_showList</result>
+    		<result name="delete" type="redirectAction">role_showList</result>
+    		<result name="updatePage">/WEB-INF/View/Role/update.jsp</result>
+    		<result name="update" type="redirectAction">role_showList</result>
+    		<result name="Privilege">/WEB-INF/View/Role/setPrivilege.jsp</result>
+    	</action>
+    	
+    	<!--    部门管理      --> 
+    	<action name="department_*" class="departmentAction" method="{1}">   		
+    		<result name="showList">/WEB-INF/View/Department/list.jsp</result>
+    		<result name="addUI">/WEB-INF/View/Department/save.jsp</result>
+    		<result name="delete" type="redirectAction">department_showList</result>
+    		<result name="add" type="redirectAction">department_showList</result>
+    		<result name="updateUI">/WEB-INF/View/Department/update.jsp</result>
+    		<result name="update" type="redirectAction">department_showList</result>
+    	</action>
+    	
+    </package>
+
+          
+    <!--<include file="example.xml"/> -->
+
+    <!-- Add packages here -->
+
+</struts>
