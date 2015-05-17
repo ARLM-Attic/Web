@@ -17,12 +17,22 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DepartmentAction extends ActionSupport{
 
 	/**
-	 * 
+	 * ++++++++++++
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	public Long id;
 	
+	public Long parentId;
+	
+	public Long getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
+
 	public String name;
 	
 	public String description;
@@ -31,7 +41,7 @@ public class DepartmentAction extends ActionSupport{
 	
 	public String showList()
 	{
-		System.out.println("+++++++++++++++++++++++++++++++++++");
+		
 		List<Department>lists=departmentService.getAll();
 		System.out.println(lists);
 		//数据放到值栈-用于页面显示
@@ -42,13 +52,17 @@ public class DepartmentAction extends ActionSupport{
 	//新建页面显示
 	public String addUI()
 	{
+		List<Department>departments=departmentService.getAll();
+		//放到值栈,页面用#获取--显示上级部门
+		ActionContext.getContext().put("departments", departments);
 		return "addUI";
 	}
 	
 	public String add()
 	{
+		//此时id获取为上级部门id
 		//增加部门
-		departmentService.save(name,description);
+		departmentService.save(name,description,parentId);
 		return "add";
 	}
 	
@@ -62,16 +76,23 @@ public class DepartmentAction extends ActionSupport{
 	//更新页面
 	public String updateUI()
 	{
-		System.out.println("                      "+id);
+		List<Department>departments=departmentService.getAll();
+		//放到值栈,页面用#获取--显示上级部门
+		ActionContext.getContext().put("departments", departments);
+		
 		Department ok=departmentService.getById(id);
 		//-----放到值栈,前台使用el表达式或struts标签显示该数据
 		ActionContext.getContext().getValueStack().push(ok);
+		if(ok.getParent()!=null)
+		{
+			parentId=ok.getParent().getId();
+		}
 		return "updateUI";
 	}
 	
 	public String update()
 	{
-		departmentService.update(id,name,description);
+		departmentService.update(id,name,description,parentId);
 		return "update";
 	}
 

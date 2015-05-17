@@ -10,14 +10,14 @@ public interface DepartmentService {
 	public List<Department> getAll();
 
 	//增加部门
-	public void save(String name, String description);
+	public void save(String name, String description, Long id);
 
 	//根据id删除部门
 	public void delete(Long id);
 
 	public Department getById(Long id);
 
-	public void update(Long id, String name, String description);
+	public void update(Long id, String name, String description, Long parentId);
 	
 
 }

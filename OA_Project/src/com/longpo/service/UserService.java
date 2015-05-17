@@ -10,5 +10,12 @@ public interface UserService {
 	
 	//用户登入验证
 	public User validate(String loginName, String password);
+	
+	public void save(User ok);
+
+	public void delete(Long id);
+
+	public void initPassword(Long id);
+
 
 }

@@ -30,8 +30,10 @@ public class RoleServiceImpl implements RoleService {
 	//增加岗位
 	@Override
 	public void add(String name, String description) {
-		
-		roleDao.save(new Role(name, description));
+		Role ok=new Role();
+		ok.setDescription(description);
+		ok.setName(name);
+		roleDao.save(ok);
 	}
 
 	//删除岗位

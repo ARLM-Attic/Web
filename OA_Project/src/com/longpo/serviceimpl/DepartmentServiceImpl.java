@@ -29,9 +29,18 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	//增加部门
 	@Override
-	public void save(String name, String description) {
+	public void save(String name, String description,Long id) {
 		
-		departmentDao.save(new Department(name,description));
+		Department ok=new Department();
+		ok.setName(name);
+		ok.setDescription(description);
+		//获取相应id的部门---根据实体来存储
+		if(id!=-1){
+		  Department father=departmentDao.getById(id);
+		  ok.setParent(father);
+		}
+		
+		departmentDao.save(ok);
 		
 	}
 
@@ -50,12 +59,16 @@ public class DepartmentServiceImpl implements DepartmentService {
 	}
 
 	@Override
-	public void update(Long id, String name, String description) {
+	public void update(Long id, String name, String description,Long fatherid) {
 
 		Department ok=departmentDao.getById(id);
 		
 		ok.setName(name);
 		ok.setDescription(description);
+		
+		//-----不要关数据库表信息,根据实体属性去存储
+		Department fatehrDepartment=departmentDao.getById(fatherid);
+		ok.setParent(fatehrDepartment);
 		departmentDao.update(ok);
 	}
 

@@ -4,13 +4,21 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.longpo.model">
-<!-- 表名不能有. -->
+
 	<class name="Role" table="longpo_role">
-		<id name="id" >
+		<id name="id">
             <generator class="native"/>
 		</id>
 		<property name="name" />
 		<property name="description" />
 		
+		
+		<!-- users属性，本类与User的多对多 -->
+		<set name="users" table="longpo_user_role">
+			<key column="roleId"></key>
+			<many-to-many class="User" column="userId"></many-to-many>
+		</set>
+		
 	</class>
-</hibernate-mapping> 
+	
+</hibernate-mapping>

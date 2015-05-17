@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,8 +24,8 @@ public class UserServiceImpl implements UserService {
 		
 		//调用Userdao实现数据获取
 	    List<User>ok=userDao.getAll();
-	   
 		return ok;
+		
 	}
 
 	//用户登入验证
@@ -39,6 +40,30 @@ public class UserServiceImpl implements UserService {
 		return null;
 		 
 	}
+
+	@Override
+	public void save(User ok) {
+		userDao.save(ok);
+		
+	}
+
+	@Override
+	public void delete(Long id) {
+		userDao.detele(id);
+		
+	}
+
+	@Override
+	public void initPassword(Long id) {
+		
+		User okUser=userDao.getById(id);
+		
+		okUser.setPassword(DigestUtils.shaHex("1234"));
+		
+		userDao.update(okUser);
+		
+	}
+
 
 
 }
