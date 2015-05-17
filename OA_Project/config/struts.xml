@@ -49,6 +49,14 @@
     		<result name="update" type="redirectAction">department_showList</result>
     	</action>
     	
+    	<!--    人员管理      --> 
+    	<action name="user_*" class="userAction" method="{1}">   		
+    		<result name="showList">/WEB-INF/View/User/list.jsp</result>
+    		<result name="addUI">/WEB-INF/View/User/add.jsp</result>
+    		<result name="add" type="redirectAction">user_showList</result>
+    		<result name="delete" type="redirectAction">user_showList</result>
+    	</action>
+    	
     </package>
 
           
