@@ -23,7 +23,17 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
+	
 
+   <!-- 配置spring用于解决懒加载问题的过滤器 -->
+   <filter>
+		<filter-name>openSessionInView</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+   </filter>
+   <filter-mapping>
+		<filter-name>openSessionInView</filter-name>
+		<url-pattern>*.action</url-pattern>
+   </filter-mapping>
 
 	<!-- 配置Struts2的核心的过滤器 -->
 	<filter>

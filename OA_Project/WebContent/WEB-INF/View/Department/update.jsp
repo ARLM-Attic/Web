@@ -4,15 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
  <title>部门设置</title>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
-    
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
-    <script type="text/javascript">
-    </script>
+   <%@ include file="/WEB-INF/View/common/head.jspf" %>
 </head>
 <body>
 <!-- 标题显示 --> 
@@ -38,7 +32,12 @@
             <div class="ItemBlock">
                 <table cellpadding="0" cellspacing="0" class="mainForm">
                     <tr><td width="100">上级部门</td>
-                        <td><select name="parentId" class="SelectStyle">
+                        <td>
+                        <s:select name="parentId" class="SelectStyle"
+                        list="#departments" listKey="id" listValue="name"
+                        headerKey="-1"  headerValue="==请选择部门=="
+                        />
+                       <%--  <select name="parentId" class="SelectStyle">
                                 <option value="0" selected="selected">请选择部门</option>
                                 <option value="7">┠总经理室</option>
                                 <option value="1">┠市场部</option>
@@ -46,7 +45,7 @@
                                 <option value="3">　┠招生部</option>
                                 <option value="4">┠教学部</option>
                                 <option value="5">┠后勤部</option>
-                            </select>
+                          </select> --%>
                         </td>
                     </tr>
                     <tr>

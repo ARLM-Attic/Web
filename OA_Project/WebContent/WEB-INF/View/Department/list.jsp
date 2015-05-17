@@ -4,15 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <title>部门列表</title>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
-    <script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
-    
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
-    <script type="text/javascript">
-    </script>
+  <%@ include file="/WEB-INF/View/common/head.jspf" %>
 </head>
 <body>
  <div id="Title_bar">
@@ -43,7 +35,8 @@
         <s:iterator value="#lists">
 			<tr class="TableDetail1 template">
 				<td><a href="#">${name}</a>&nbsp;</td>
-				<td>${department.parent.name}&nbsp;</td>
+				<!--  放入值栈的是Department的parent属性,我们要显示parent里的name属性 -->
+				<td>${parent.name}&nbsp;</td>
 				<td>${description}&nbsp;</td>
 				<td>
 				<s:a action="department_delete?id=%{id}" onClick="return confirm('确定删除吗?')">删除</s:a>
