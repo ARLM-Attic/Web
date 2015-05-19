@@ -2,6 +2,7 @@ package com.longpo.action;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -67,20 +68,33 @@ public class UserAction extends ActionSupport {
 		
 		System.out.println("usernanme: "+loginName+"  password:"+password);
 		
+		if(loginName==null||password==null)
+		{
+			addFieldError("loginMsg", "填写完整的账号密码");
+			return ERROR;
+		}
 		//密码MD5加密....需要导入包commons-codec.jar
 		String md5_password=DigestUtils.shaHex(password);
 	    User user=userService.validate(loginName,md5_password);
 	    //登入成功
 	    if(user!=null){
 		    System.out.println("success+++++++++++++++++++++++++");
+		    //struts2进行了封装
+		    //ActionContext.getContext().getSession().put("user",user);
 		    HttpServletRequest request = ServletActionContext.getRequest();		
 			request.getSession().setAttribute("user",user );//用户存入session
 		    return SUCCESS;
 	    }
 	     //登入失败
 	    else {	
-	    	HttpServletRequest request = ServletActionContext.getRequest();		
-			request.getSession().setAttribute("state","false" );//用户存入session
+	    	//方法1
+	    	//错误信息，前台显示--未使用structs2标签
+	    	/*HttpServletRequest request = ServletActionContext.getRequest();		
+			request.getSession().setAttribute("state","false" );//错误信息
+*/			
+	    	//方法2：
+	    	//错误信息，前台显示，使用struct标签
+			addFieldError("loginMsg", "用户名或密码错误！");
 			return ERROR;
 	    }
 	}
@@ -99,11 +113,26 @@ public class UserAction extends ActionSupport {
 		List<User>lists=userService.getAll();
 		//放到值栈		
 		ActionContext.getContext().put("lists", lists);
-		
+		//懒加载问题
 		for(int i=0;i<lists.size();i++)
 		{
 			System.out.println(lists.get(i).getDepartment().getName());
 		}
+		
+		//放到值栈的对象栈
+		/*Test okTest=new Test();
+		okTest.setMydata("ValueStack");
+		okTest.setId(10);
+		ActionContext.getContext().getValueStack().push(okTest);
+		//放到Context的Map
+	    ActionContext.getContext().put("mydata", "context");
+		//放到Application里的Map
+		ActionContext.getContext().getApplication().put("mydata", "Application");
+		//放到Session里的Map
+		ActionContext.getContext().getSession().put("mydata", "session");
+		//放到request里的Map
+		Map request=(Map)ActionContext.getContext().get("request");
+		request.put("mydata", "request");*/	
 		return "showList";
 	}
 		
@@ -134,7 +163,7 @@ public class UserAction extends ActionSupport {
 		ok.setLoginName(loginName);//登入账号
 		ok.setName(name);
 		//密码MD5加密....需要导入包commons-codec.jar
-		String md5_password=DigestUtils.shaHex(password);
+		String md5_password=DigestUtils.shaHex("1234");//初始密码1234
 		ok.setPassword(md5_password);
 		
 		ok.setPhoneNumber(phoneNumber);

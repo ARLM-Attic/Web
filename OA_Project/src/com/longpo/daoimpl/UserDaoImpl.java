@@ -13,9 +13,9 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public User getByName(String name) {
-		// System.out.println(class_type.getSimpleName());能获取为User			
+				
 		List<User> users = getSession().createQuery(
-						"FROM " + class_type.getSimpleName() + " where name=?")
+						"FROM " + class_type.getSimpleName() + " where loginName=?")
 				.setString(0, name).list();//0表示第一个占位符
 		System.out.println(users);
 		if(users.size()>0)
