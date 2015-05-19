@@ -29,7 +29,7 @@
 
 <!--显示表单内容-->
 <div id="MainArea">
-    <form action="role_add.action" method="post">
+    <form action="forum_update.action" method="post">
         <div class="ItemBlock_Title1"><!-- 信息说明<DIV CLASS="ItemBlock_Title1">
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif" /> 岗位信息 </DIV>  -->
         </div>
@@ -38,13 +38,25 @@
         <div class="ItemBlockBorder">
             <div class="ItemBlock">
                 <table cellpadding="0" cellspacing="0" class="mainForm">
+                <tr>
+                <td>
+                <!-- 需要隐藏字段id，不然不知道操作那个id主键的数据 -->
+                <s:hidden name="id"></s:hidden>
+                </td>
+                </tr>
                     <tr>
-                        <td width="100">岗位名称</td>
-                        <td><input type="text" name="name" class="InputStyle" required="required"/> *</td>
+                        <td width="100">版块名称</td>
+                        <td>
+                        <s:textfield name="name" class="InputStyle" required="required"/> *
+                        </td>
+                        
                     </tr>
                     <tr>
-                        <td>岗位说明</td>
-                        <td><textarea name="description" class="TextareaStyle" required="required"></textarea></td>
+                        <td>版块说明</td>
+                        <td>
+                        <s:textarea  name="description" class="TextareaStyle" required="required"  rows="3" cols="50"></s:textarea>
+                       
+                        </td>
                     </tr>
                 </table>
             </div>

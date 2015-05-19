@@ -13,8 +13,26 @@
     <DIV ID="CenterAreaBg">
         <DIV ID="CenterArea">
             <DIV ID="LogoImg"><IMG BORDER="0" SRC="style/blue/images/logo.png" /></DIV>
+            
+          <%--  
+                                                    显示错误方法1：以前自己经常使用 
+             <%
+			     Object state=request.getSession().getAttribute("user");
+                 String ok=(String)request.getSession().getAttribute("state");
+                 if(state==null&&ok!=null){
+			 %>           
+                 <DIV ID="CopyRight"> 密码或账号错误</DIV>
+            <% } %> --%>
+            
             <DIV ID="LoginInfo">
-                <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 width=100%>
+                <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 width=100%>           
+                     <tr>
+                     <!-- 方法2，使用structs2标签 -->
+                     <!-- 显示错误 -->
+                       <td colspan="3">
+                         <font color="red"><s:fielderror fieldName="loginMsg"/></font>
+                       </td>
+                     </tr>
                     <TR>
                         <TD width=45 CLASS="Subject"><IMG BORDER="0" SRC="style/blue/images/login/userId.gif" /></TD>
                         <TD><INPUT SIZE="20" CLASS="TextField" TYPE="text" NAME="loginName" required="required"/></TD>
@@ -26,13 +44,7 @@
                     </TR>
                 </TABLE>
             </DIV>
-             <%
-			     Object state=request.getSession().getAttribute("user");
-                 String ok=(String)request.getSession().getAttribute("state");
-                 if(state==null&&ok!=null){
-			 %>           
-              <DIV ID="CopyRight"> 密码或账号错误</DIV>
-            <% } %>
+            
             
         </DIV>
     </DIV>
