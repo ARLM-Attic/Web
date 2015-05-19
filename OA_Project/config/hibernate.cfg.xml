@@ -25,6 +25,7 @@
         <mapping resource="com/longpo/model/User.hbm.xml"/>
         <mapping resource="com/longpo/model/Role.hbm.xml"/>
         <mapping resource="com/longpo/model/Department.hbm.xml"/>
+        <mapping resource="com/longpo/model/Forum.hbm.xml"/>
         
      
     </session-factory>
