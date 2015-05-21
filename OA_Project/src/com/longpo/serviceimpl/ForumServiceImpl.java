@@ -4,16 +4,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.longpo.dao.ForumDao;
-import com.longpo.dao.UserDao;
 import com.longpo.model.Forum;
-import com.longpo.model.User;
 import com.longpo.service.ForumService;
-import com.longpo.service.UserService;
 
 @Service
 @Transactional
@@ -35,6 +31,7 @@ public class ForumServiceImpl implements ForumService {
 		Forum ok=new Forum();
 		ok.setDescription(description);
 		ok.setName(name);
+    
 		//最大值加一
 		ok.setPosition(len[0]+1);
 		

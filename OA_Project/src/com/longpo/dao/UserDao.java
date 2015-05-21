@@ -1,7 +1,5 @@
 package com.longpo.dao;
 
-import java.util.List;
-
 import com.longpo.model.User;
 
 /**

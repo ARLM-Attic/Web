@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 

@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.longpo.dao.RoleDao;
 import com.longpo.model.Role;
 import com.longpo.service.RoleService;
 import com.opensymphony.xwork2.ActionContext;

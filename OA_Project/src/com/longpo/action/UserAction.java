@@ -2,7 +2,6 @@ package com.longpo.action;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -78,7 +77,7 @@ public class UserAction extends ActionSupport {
 	    User user=userService.validate(loginName,md5_password);
 	    //登入成功
 	    if(user!=null){
-		    System.out.println("success+++++++++++++++++++++++++");
+		    System.out.println("success+++++++++++++++++++++++++"+user.getName());
 		    //struts2进行了封装
 		    //ActionContext.getContext().getSession().put("user",user);
 		    HttpServletRequest request = ServletActionContext.getRequest();		

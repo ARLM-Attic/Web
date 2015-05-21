@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 
 import com.longpo.model.Forum;
 import com.longpo.service.ForumService;
-import com.longpo.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,7 +30,8 @@ public class ForumAction extends ActionSupport{
 	
 	@Resource	
 	private ForumService forumService;
-	
+
+//----------------------------------论坛管理	
 	//显示版块列表
 	public String showList()
 	{
@@ -93,6 +93,7 @@ public class ForumAction extends ActionSupport{
 		return "down";
 	}
 		
+
 
 	public String getName() {
 		return name;
