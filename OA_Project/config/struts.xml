@@ -23,9 +23,8 @@
     		
     		<!--struts2默认使用defaultstack拦截器栈,定义自己的拦截器-->
     		<interceptor-stack name="myStack">
-    			<!--添加自己的拦截器到拦截器栈里
-    			<interceptor-ref name="myInterceptor"></interceptor-ref>   
-    			-->
+    			<!--添加自己的拦截器到拦截器栈里 --> 			
+    			<interceptor-ref name="myInterceptor"></interceptor-ref>    			
     			<!--再把默认拦截器栈里的拦截器添加进来-->
     			<interceptor-ref name="defaultStack"></interceptor-ref>   			
     		</interceptor-stack>
@@ -85,7 +84,7 @@
     	</action>
     	
     	
-    	<!--    版块管理     --> 
+    	<!--    论坛管理     --> 
     	<action name="forum_*" class="forumAction" method="{1}">   		
     		<result name="showList">/WEB-INF/View/Forum/ForumList.jsp</result>
     		<result name="addUI">/WEB-INF/View/Forum/Forumadd.jsp</result>
@@ -95,6 +94,21 @@
     		<result name="update" type="redirectAction">forum_showList</result>
     		<result name="up" type="redirectAction">forum_showList</result>
     		<result name="down" type="redirectAction">forum_showList</result>
+    	</action>
+    	
+    	
+    	<!--    版块显示     --> 
+    	<action name="forumList_*" class="forumListAction" method="{1}">   		
+    		<result name="showList">/WEB-INF/View/Forum/list.jsp</result>
+    	</action>
+    	
+    	
+    	<!--    主题显示     --> 
+    	<action name="topic_*" class="topicAction" method="{1}">   		
+    		<result name="showTopic">/WEB-INF/View/Topic/showTopic.jsp</result>	
+    		<result name="addUI">/WEB-INF/View/Topic/add.jsp</result>
+    		<result name="add" type="redirectAction">topic_showTopic</result>	
+    		<result name="showReply">/WEB-INF/View/Topic/showReply.jsp</result>		
     	</action>
     	
     </package>
